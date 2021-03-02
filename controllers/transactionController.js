@@ -36,16 +36,15 @@ exports.getBlog = async (req, res, next) => {
 
 		return res.status(200).json({
 			success: true,
-			data: transaction
-		})
-
+			data: transaction,
+		});
 	} catch (err) {
 		return res.status(404).json({
 			success: false,
-			error: 'Blog not found'
-		})
+			error: 'Blog not found',
+		});
 	}
-}
+};
 
 //Alternate way of doing the same thing as above
 /* exports.getTransactions = async (req, res, next) => {
@@ -63,7 +62,7 @@ exports.getBlog = async (req, res, next) => {
 // @access  Public
 exports.postTransaction = async (req, res, next) => {
 	try {
-		const { title, description, body, user_id, timestamp } = req.body;
+		const { title, description, body, user, userId, timestamp } = req.body;
 
 		const transaction = await Transaction.create(req.body);
 
