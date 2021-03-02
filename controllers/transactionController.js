@@ -62,7 +62,7 @@ exports.getBlog = async (req, res, next) => {
 // @access  Public
 exports.postTransaction = async (req, res, next) => {
 	try {
-		const { title, description, body, user, userId, timestamp } = req.body;
+		const { title, description, body, user, email, timestamp } = req.body;
 
 		const transaction = await Transaction.create(req.body);
 

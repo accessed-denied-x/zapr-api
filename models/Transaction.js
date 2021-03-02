@@ -15,7 +15,7 @@ const TransactionSchema = new mongoose.Schema(
 			required: [true, 'Your blog needs body text'],
 		},
 		user: String,
-		userId: String,
+		email: String,
 	},
 	{ timestamps: true }
 );
